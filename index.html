@@ -1,203 +1,163 @@
 <!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Hyperspace by HTML5 UP</title>
+		<title>Wild Bear Detection System</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	<style>
+	    /* 1. 우측 본문 배경을 '완전한 블랙'으로 변경 */
+    	body, #wrapper {
+        	background-color: #000000 !important;
+	        background-image: none !important;
+	    }
+
+    	/* 각 섹션별 배경도 블랙으로 통일 */
+    	.wrapper.style1, .wrapper.style2, .wrapper.style3, .wrapper.style1-alt {
+        	background-color: #000000 !important;
+        	background-image: none !important;
+    	}
+
+    	/* 2. 좌측 사이드바를 '짙은 회색'으로 변경 */
+    	#sidebar {
+        	background-color: #4d4d4d !important;
+        	background-image: none !important;
+        	border-right: 1px solid #444;
+    	}
+    
+    	/* 사이드바 내부 배경도 통일 */
+    	#sidebar .inner {
+        	background: transparent !important;
+    	}
+
+        /* 3. 사이드바 메뉴 글자 크기 변경 */
+        #sidebar nav ul li a {
+            font-size: 1.3em !important;
+            font-weight: bold !important;
+            margin-bottom: 1rem;
+        }
+
+        /* 4. 이미지 스택 스타일 (너비 350px 고정) */
+        .image-stack {
+            width: 328px !important;      
+            min-width: 328px !important;  
+            flex: 0 0 219px !important;   
+            
+            display: flex;
+            flex-direction: column; /* 세로 정렬 */
+            overflow: hidden; 
+        }
+        
+        .image-stack img {
+            width: 100%;
+            height: auto;
+            display: block; /* 이미지 간 여백 제거 */
+            margin: 0;
+        }
+
+        /* 모바일 화면 대응 */
+        @media screen and (max-width: 980px) {
+            .spotlights > section {
+                flex-direction: column;
+            }
+            .image-stack {
+                width: 100% !important;
+                min-width: 100% !important;
+                max-width: 328px; 
+                margin: 0 auto 2rem auto; 
+                flex: none !important;
+            }
+        }
+	</style>
+
 	</head>
 	<body class="is-preload">
 
-		<!-- Sidebar -->
-			<section id="sidebar">
+		<section id="sidebar">
 				<div class="inner">
 					<nav>
 						<ul>
 							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
-							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
+							<li><a href="#one">Project Overview</a></li>
 						</ul>
 					</nav>
 				</div>
 			</section>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
+				<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>TEST</h1>
-							<p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
+							<h1>Wild Bear Detection System</h1>
+							<p>YOLOv7 tiny 기반의 실시간 야생 곰 탐지 및 경보 시스템입니다.<br />
+							엣지 디바이스의 빠른 추론을 위해 NPU 환경에 최적화되었습니다.</p>
+                            
+                            <!-- 상단 메인 이미지 -->
+                            <div style="text-align: left; margin: 2rem 0;">
+                                <img src="images/091453.jpg" alt="Wild Bear Detection System Overview" style="max-width: 100%; width: 1200px; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);" />
+                            </div>
+
 							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
+								<li><a href="https://github.com/sunline9/Bear_detection" class="button" target="_blank">View Source Code</a></li>
 							</ul>
 						</div>
 					</section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
+				<section id="one" class="wrapper style2 spotlights">
 						<section>
-							<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+							<!-- 이미지 스택 영역 (350px) -->
+							<div class="image-stack">
+                                <img src="images/10003266.jpg" alt="Detected Bear 1" />
+                                <img src="images/10001568.jpg" alt="Detected Bear 2" />
+                                <img src="images/10003742.jpg" alt="Detected Bear 3" />
+                            </div>
+                            
 							<div class="content">
 								<div class="inner">
-									<h2>Sed ipsum dolor</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Feugiat consequat</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Ultricies aliquam</h2>
-									<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
+									<h2>Project Background & Solution</h2>
+									
+                                    <h3>1. 추진 배경 (Why Now?)</h3>
+                                    <ul>
+                                        <li><strong>일본의 야생 곰 피해 급증:</strong> 도심 출몰 빈도 증가로 인한 인명 및 재산 피해 심각화</li>
+                                        <li><strong>국내 잠재적 위협 증가:</strong> 반달가슴곰 개체 수 증가에 따른 민가/등산로 출몰 가능성 대비 필요</li>
+                                    </ul>
 
-				<!-- Two -->
-					<section id="two" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>What we do</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Lorem ipsum amet</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-lock"></span>
-									<h3>Aliquam sed nullam</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-cog"></span>
-									<h3>Sed erat ullam corper</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-desktop"></span>
-									<h3>Veroeros quis lorem</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-link"></span>
-									<h3>Urna quis bibendum</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-								<section>
-									<span class="icon major fa-gem"></span>
-									<h3>Aliquam urna dapibus</h3>
-									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="generic.html" class="button">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
+                                    <h3>2. 기존 감시 체계의 문제점 (Pain Points)</h3>
+                                    <ul>
+                                        <li><strong>중앙 서버 집중형의 한계:</strong> 광대한 산간 지역의 모든 영상을 메인 서버로 전송하여 탐지하는 것은 불가능 (네트워크 및 비용 제약)</li>
+                                        <li><strong>실시간 탐지 불안정:</strong> 서버 과부하 시 실시간 탐지 실패 우려</li>
+                                    </ul>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>12345 Somewhere Road #654<br />
-											Nashville, TN 00000-0000<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">user@untitled.tld</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(000) 000-0000</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-												<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-												<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-												<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
+                                    <h3>3. 핵심 솔루션 (Our Solution)</h3>
+                                    <ul>
+                                        <li><strong>On-Device AI (Edge Computing):</strong> NPU가 탑재된 엣지 단말(CCTV 등) 활용</li>
+                                        <li><strong>YOLO Object Detection:</strong> 경량화된 객체 탐지 모델을 탑재하여 현장에서 즉시 분석</li>
+                                    </ul>
+
+                                    <!-- 4번 항목 추가 -->
+                                    <h3>4. 기대 효과 (Expected Effects)</h3>
+                                    <ul>
+                                        <li><strong>효율적 감시 체계 구축:</strong> 소규모 장비로도 광범위한 지역의 곰 출몰을 실시간으로 감지 가능</li>
+                                    </ul>
+
+								</div>
 							</div>
-						</div>
+						</section>
 					</section>
 
 			</div>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
+		<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Wild Bear Detection. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
